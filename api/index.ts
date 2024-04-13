@@ -1,14 +1,13 @@
-import { Hono } from 'hono'
-import { handle } from 'hono/vercel'
+import { Hono } from "hono";
+import { handle } from "hono/vercel";
 // import { bearerAuth } from 'hono/bearer-auth'
-
 export const config = {
-  runtime: 'edge',
-}
+  runtime: "edge",
+};
 
-const app = new Hono().basePath('/api')
+const app = new Hono().basePath("/api");
 
-app.get('/hello', (c) => c.json({ message: 'Hello Hono!' }))
+app.get("/hello", (c) => c.json({ message: "Hello Hono!" }));
 
 // const token = process.env.TOKEN ? process.env.TOKEN : '';
 // app.use('/auth/*', bearerAuth({ token }))
@@ -17,4 +16,4 @@ app.get('/hello', (c) => c.json({ message: 'Hello Hono!' }))
 //   return c.text('you are authorized')
 // })
 
-export default handle(app)
+export default handle(app);
