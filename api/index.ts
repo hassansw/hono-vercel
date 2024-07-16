@@ -8,6 +8,8 @@ export const config = {
 const app = new Hono().basePath("/api");
 
 app.get("/hello", (c) => c.json({ message: "Hello Hono!" }));
+app.get("/helloV2", (c) => c.json({ message: "Hello Hono V2!" }));
+// app.post("")
 
 // const token = process.env.TOKEN ? process.env.TOKEN : '';
 // app.use('/auth/*', bearerAuth({ token }))
